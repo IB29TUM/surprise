@@ -3,26 +3,56 @@
 <head>
     <title>Hello World App with Images and Button</title>
     <style>
+        body {
+            text-align: center; /* Centers inline and inline-block elements */
+            font-family: Arial, sans-serif; /* Sets a default font */
+        }
+        
         #messageButton {
             background-color: pink;
             color: white;
-            font-size: 20px; /* Larger font size */
-            padding: 10px 20px; /* Padding around the text */
-            border: none; /* Removes the default border */
-            border-radius: 5px; /* Optional: rounds the corners */
-            cursor: pointer; /* Changes cursor to a hand icon when hovered */
+            font-size: 24px; /* Even larger font size */
+            padding: 20px 40px; /* Increased padding around the text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block; /* Allows block level properties */
+            margin-top: 20px; /* Adds space above the button */
         }
 
         #messageButton:hover {
-            background-color: #ff99cc; /* Slightly different color on hover */
+            background-color: #ff99cc;
+        }
+
+        /* Centers the button container */
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            max-width: 90%; /* Makes images responsive */
+            height: auto;
+            margin-top: 20px; /* Adds space above the image */
+        }
+        
+        /* Centers the images */
+        .image-container {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <img src="image1.png" alt="Image 1" id="image1">
-    <img src="image3.png" alt="Image 3" id="image3">
-    <button id="messageButton">Indra wrote a message for you</button>
+    <div class="image-container">
+        
+        <img src="image1.png" alt="Image 1" id="image1">
+        <img src="image3.png" alt="Image 3" id="image3">
+    </div>
+    <div class="button-container">
+        <button id="messageButton">Indra wrote a message for you</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
