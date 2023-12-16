@@ -9,32 +9,49 @@
             margin: 0;
             font-family: 'Arial', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background-color: #f0f0f0; /* Just an example background color */
         }
         img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
             border-radius: 8px; /* Optional: if you want rounded corners */
+            cursor: pointer; /* Indicates that the image is clickable */
         }
-        /* Style for the audio player */
-        audio {
-            margin-top: 20px; /* Spacing above the audio player */
-            width: 100%; /* Responsive width */
-            max-width: 300px; /* Maximum width of the audio player */
+        #instruction {
+            margin-bottom: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <img src="sketch.jpeg" alt="Sketch">
+    
+    <img src="sketch.jpeg" alt="Sketch" id="sketchImage">
+    <div id="instruction">Tap on the image for some magic!</div>
 
-    <!-- Audio player -->
-    <audio controls autoplay>
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer">
         <source src="song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
+    <script>
+        // Get the image and audio elements
+        var image = document.getElementById('sketchImage');
+        var audio = document.getElementById('audioPlayer');
+
+        // Play audio when the image is clicked
+        image.addEventListener('click', function() {
+            // Check if audio is paused to play or pause
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+    </script>
 </body>
 </html>
